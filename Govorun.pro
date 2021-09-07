@@ -10,13 +10,28 @@ CONFIG += c++11
 win32: RC_ICONS = $$PWD/Images/govorun.ico
 
 SOURCES += \
+    AzsNetworkDialog/azsnetworkdialog.cpp \
+    AzsNetworkDialog/editazsnetworkdialog.cpp \
+    DataBase/database.cpp \
+    GlobalSettings/globalsettings.cpp \
+    LoggingCategories/loggingcategories.cpp \
+    OptionsDialog/optionsdialog.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    AzsNetworkDialog/azsnetworkdialog.h \
+    AzsNetworkDialog/editazsnetworkdialog.h \
+    DataBase/database.h \
+    GlobalSettings/globalsettings.h \
+    LoggingCategories/loggingcategories.h \
+    OptionsDialog/optionsdialog.h \
     mainwindow.h
 
 FORMS += \
+    AzsNetworkDialog/azsnetworkdialog.ui \
+    AzsNetworkDialog/editazsnetworkdialog.ui \
+    OptionsDialog/optionsdialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.

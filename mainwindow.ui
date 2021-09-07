@@ -11,12 +11,59 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Говорун </string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Images/govorun.ico</normaloff>Images/govorun.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>&amp;Настройка</string>
+    </property>
+    <widget class="QMenu" name="menu_2">
+     <property name="title">
+      <string>&amp;Клиенты</string>
+     </property>
+     <addaction name="menuAzsNetwork"/>
+    </widget>
+    <addaction name="menu_2"/>
+    <addaction name="separator"/>
+    <addaction name="menuOptions"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="menuOptions">
+   <property name="icon">
+    <iconset resource="resourse.qrc">
+     <normaloff>:/Images/settings_software.png</normaloff>:/Images/settings_software.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Параметры</string>
+   </property>
+   <property name="statusTip">
+    <string>Параметры приложения</string>
+   </property>
+  </action>
+  <action name="menuAzsNetwork">
+   <property name="text">
+    <string>Список сетей</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="resourse.qrc"/>
+ </resources>
  <connections/>
 </ui>
