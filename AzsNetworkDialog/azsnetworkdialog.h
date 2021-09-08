@@ -2,6 +2,7 @@
 #define AZSNETWORKDIALOG_H
 
 #include <QDialog>
+#include <QSqlRecord>
 
 namespace Ui {
 class AzsNetworkDialog;
@@ -15,10 +16,15 @@ public:
     explicit AzsNetworkDialog(QWidget *parent = nullptr);
     ~AzsNetworkDialog();
 
+private slots:
+    void on_pushButtonAdd_clicked();
+
 private:
     void createUI();
+    void createModel();
 private:
     Ui::AzsNetworkDialog *ui;
+    QSqlRecord *currentRecord;
 };
 
 #endif // AZSNETWORKDIALOG_H
