@@ -77,23 +77,23 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
 #ifdef QT_DEBUG
     case QtInfoMsg:
         out << "[INF] ";
-        console << "Info:     " << msg << " ***[" << context.function << " File: " << context.file << " Line: " << context.line << "] " << endl;
+        console << "Info:     " << msg << " ***[" << context.function << " File: " << context.file << " Line: " << context.line << "] " << Qt::endl;
         break;
     case QtDebugMsg:
         out << "[DBG] " ;
-        console << "Debug:    " << msg << " ***[" << context.function << " File: " << context.file << " Line: " << context.line << "] " << endl;
+        console << "Debug:    " << msg << " ***[" << context.function << " File: " << context.file << " Line: " << context.line << "] " << Qt::endl;
         break;
     case QtWarningMsg:
         out << "[WRN] ";
-        console << "Warning:  " << msg << " ***[" << context.function << " File: " << context.file << " Line: " << context.line << "] "  << endl;
+        console << "Warning:  " << msg << " ***[" << context.function << " File: " << context.file << " Line: " << context.line << "] "  << Qt::endl;
         break;
     case QtCriticalMsg:
         out << "[CRT] ";
-        console << "Critical: " << msg << " ***[" << context.function << " File: " << context.file << " Line: " << context.line << "] " << endl;
+        console << "Critical: " << msg << " ***[" << context.function << " File: " << context.file << " Line: " << context.line << "] " << Qt::endl;
         break;
     case QtFatalMsg:
         out << "[FTL] ";
-        console << "Fatality: " << msg << " ***[" << context.function << " File: " << context.file << " Line: " << context.line << "] " << endl;
+        console << "Fatality: " << msg << " ***[" << context.function << " File: " << context.file << " Line: " << context.line << "] " << Qt::endl;
         break;
 #else
     case QtInfoMsg:     out << "[INF] "; break;
@@ -107,7 +107,7 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
 
     // Записываем в вывод категорию сообщения и само сообщение
     out << context.category << ": " << msg;
-    out << "  ***[" << context.function << " File: " << context.file << " Line: " << context.line << "]***" << endl;
+    out << "  ***[" << context.function << " File: " << context.file << " Line: " << context.line << "]***" << Qt::endl;
     // Очищаем буферизированные данные
     out.flush();
     console.flush();

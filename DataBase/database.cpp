@@ -30,7 +30,7 @@ bool DataBase::connectDb()
     settings.endGroup();
 
     if(!db.open()) {
-        qCritical(logCritical()) <<  "Не возможно подключиться к базе данных." << endl << "Причина:" << db.lastError().text();
+        qCritical(logCritical()) <<  "Не возможно подключиться к базе данных." << Qt::endl << "Причина:" << db.lastError().text();
 
         QMessageBox msgBox;
         msgBox.setIcon(QMessageBox::Critical);

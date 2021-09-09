@@ -31,6 +31,12 @@ void AzsNetworkDialog::createModel()
 void AzsNetworkDialog::on_pushButtonAdd_clicked()
 {
     currentRecord->clear();
-    EditAZSNetworkDialog *edAZSNetDlg = new EditAZSNetworkDialog(currentRecord);
+    EditAZSNetworkDialog *edAZSNetDlg = new EditAZSNetworkDialog(currentRecord,this);
     edAZSNetDlg->exec();
 }
+
+void AzsNetworkDialog::on_pushButtonClose_clicked()
+{
+    this->reject();
+}
+

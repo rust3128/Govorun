@@ -19,6 +19,8 @@ public:
 private slots:
     void on_pushButtonAdd_clicked();
 
+    void on_pushButtonClose_clicked();
+
 private:
     void createUI();
     void createModel();

@@ -74,7 +74,7 @@ void EditAZSNetworkDialog::on_buttonBox_accepted()
             q.bindValue(":isactive", QVariant(ui->checkBoxIsActive->isChecked()).toInt());
 
             if(!q.exec()) {
-                qCritical(logCritical()) << "Не возможно добавить клиента." << endl << q.lastError().text();
+                qCritical(logCritical()) << "Не возможно добавить клиента." << Qt::endl << q.lastError().text();
                 return;
             }
             qInfo(logInfo()) << "Клиент добавлен.";
@@ -83,3 +83,9 @@ void EditAZSNetworkDialog::on_buttonBox_accepted()
 
     this->accept();
 }
+
+void EditAZSNetworkDialog::on_buttonBox_rejected()
+{
+    this->reject();
+}
+
