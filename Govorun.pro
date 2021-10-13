@@ -11,8 +11,13 @@ win32: RC_ICONS = $$PWD/Images/govorun.ico
 
 SOURCES += \
     AzsNetworkDialog/azsnetworkdialog.cpp \
+    AzsNetworkDialog/azsnetworkmodel.cpp \
     AzsNetworkDialog/editazsnetworkdialog.cpp \
+    AzsNetworkDialog/logodelegate.cpp \
     DataBase/database.cpp \
+    Firms/editfirmsdialog.cpp \
+    Firms/firmsdialog.cpp \
+    Firms/mymodelfirms.cpp \
     GlobalSettings/globalsettings.cpp \
     LoggingCategories/loggingcategories.cpp \
     OptionsDialog/optionsdialog.cpp \
@@ -21,8 +26,13 @@ SOURCES += \
 
 HEADERS += \
     AzsNetworkDialog/azsnetworkdialog.h \
+    AzsNetworkDialog/azsnetworkmodel.h \
     AzsNetworkDialog/editazsnetworkdialog.h \
+    AzsNetworkDialog/logodelegate.h \
     DataBase/database.h \
+    Firms/editfirmsdialog.h \
+    Firms/firmsdialog.h \
+    Firms/mymodelfirms.h \
     GlobalSettings/globalsettings.h \
     LoggingCategories/loggingcategories.h \
     OptionsDialog/optionsdialog.h \
@@ -31,6 +41,8 @@ HEADERS += \
 FORMS += \
     AzsNetworkDialog/azsnetworkdialog.ui \
     AzsNetworkDialog/editazsnetworkdialog.ui \
+    Firms/editfirmsdialog.ui \
+    Firms/firmsdialog.ui \
     OptionsDialog/optionsdialog.ui \
     mainwindow.ui
 

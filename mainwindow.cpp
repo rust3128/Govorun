@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "OptionsDialog/optionsdialog.h"
 #include "AzsNetworkDialog/azsnetworkdialog.h"
+#include "Firms/firmsdialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -26,4 +27,10 @@ void MainWindow::on_menuAzsNetwork_triggered()
 {
     AzsNetworkDialog *azsNetDlg = new AzsNetworkDialog();
     azsNetDlg->exec();
+}
+
+void MainWindow::on_menuFirms_triggered()
+{
+    FirmsDialog *firmsDlg = new FirmsDialog();
+    firmsDlg->exec();
 }

@@ -50,6 +50,16 @@ void EditAZSNetworkDialog::createUI()
         inByteArray.clear();
     } else {
         this->setWindowTitle("Редактирование данных по сети АЗС");
+        ui->lineEditName->setText(editRecord->value(1).toString());
+        ui->checkBoxIsActive->setChecked(editRecord->value(3).toBool());
+        QPixmap outPixmap = QPixmap();
+        inByteArray = editRecord->value(2).toByteArray();
+        outPixmap.loadFromData(inByteArray);
+        if(!outPixmap.isNull())
+            ui->labelLogo->setPixmap(outPixmap);
+        else
+            ui->labelLogo->setText("Логотип отсутствует");
+
     }
 }
 
@@ -78,6 +88,25 @@ void EditAZSNetworkDialog::on_buttonBox_accepted()
                 return;
             }
             qInfo(logInfo()) << "Клиент добавлен.";
+        }
+    } else {
+        int result = QMessageBox::question(this,tr("Вопрос"),
+                                           QString(tr("Вы дейстиветльно хотите обновить информацию о клиенте %1 в базе данных?"))
+                                           .arg(ui->lineEditName->text().trimmed()));
+        if(result == QMessageBox::Yes){
+            QSqlQuery q;
+            q.prepare("UPDATE azsnetwork SET name = :name, logo = :logo, isactive = :isactive "
+                      "WHERE NETWORK_ID = :networkID");
+            q.bindValue(":name", ui->lineEditName->text().trimmed());
+            q.bindValue(":logo",  inByteArray);
+            q.bindValue(":isactive", QVariant(ui->checkBoxIsActive->isChecked()).toInt());
+            q.bindValue(":networkID", editRecord->value(0).toInt());
+            if(!q.exec()) {
+                qCritical(logCritical()) << "Не возможно обновить данные клиента." << endl << q.lastError().text();
+                return;
+            }
+            qInfo(logInfo()) << "Информация о клиенте обновлена.";
+
         }
     }
 

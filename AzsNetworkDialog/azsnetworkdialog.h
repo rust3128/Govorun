@@ -1,6 +1,9 @@
 #ifndef AZSNETWORKDIALOG_H
 #define AZSNETWORKDIALOG_H
 
+#include "AzsNetworkDialog/azsnetworkmodel.h"
+#include "AzsNetworkDialog/logodelegate.h"
+
 #include <QDialog>
 #include <QSqlRecord>
 
@@ -21,12 +24,16 @@ private slots:
 
     void on_pushButtonClose_clicked();
 
+    void on_tableView_doubleClicked(const QModelIndex &idx);
+
 private:
     void createUI();
     void createModel();
 private:
     Ui::AzsNetworkDialog *ui;
     QSqlRecord *currentRecord;
+    AzsNetworkModel *modelNetwork;
+    LogoDelegate *logoDelegate;
 };
 
 #endif // AZSNETWORKDIALOG_H

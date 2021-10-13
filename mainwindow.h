@@ -20,6 +20,8 @@ private slots:
 
     void on_menuAzsNetwork_triggered();
 
+    void on_menuFirms_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

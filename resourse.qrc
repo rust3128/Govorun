@@ -6,5 +6,7 @@
         <file>Images/add_plus_icon.png</file>
         <file>Images/exit_stock_icon.png</file>
         <file>Images/open_icon.png</file>
+        <file>Images/edit_icon.png</file>
+        <file>Images/new_document_icon.png</file>
     </qresource>
 </RCC>

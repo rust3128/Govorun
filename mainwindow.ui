@@ -36,6 +36,7 @@
       <string>&amp;Клиенты</string>
      </property>
      <addaction name="menuAzsNetwork"/>
+     <addaction name="menuFirms"/>
     </widget>
     <addaction name="menu_2"/>
     <addaction name="separator"/>
@@ -58,7 +59,12 @@
   </action>
   <action name="menuAzsNetwork">
    <property name="text">
-    <string>Список сетей</string>
+    <string>&amp;Список сетей</string>
+   </property>
+  </action>
+  <action name="menuFirms">
+   <property name="text">
+    <string>Справочник &amp;Фирм</string>
    </property>
   </action>
  </widget>
